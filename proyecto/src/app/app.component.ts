@@ -18,9 +18,7 @@ export class AppComponent implements OnInit{
     this.http.get(url).subscribe((res)=>{
       this.data =res;
       console.log(this.data);
-      let p;
-      const nombre=this.data.name.map(p=>p.name);
-      sessionStorage.setItem('login',JSON.stringify(nombre));
+     
     })
   }
   ngOnInit(){
