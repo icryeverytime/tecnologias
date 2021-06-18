@@ -1,0 +1,10 @@
+<h1>
+    Prueba
+</h1>
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+    <input type="text" name="name" ngModel placeholder="name"><br><br>  
+    <input type="email" name="correo" ngModel placeholder="email"><br><br>    
+    <input type="password" name="contra" ngModel placeholder="password"><br><br>    
+    <input type="date" name="fecha" ngModel><br><br>    
+    <button type="submit">Submit</button>
+</form>
