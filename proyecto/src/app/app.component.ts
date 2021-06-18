@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'proyecto';
+  
   public data:any = [];
  constructor(private http: HttpClient) { 
  }
