@@ -18,6 +18,7 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
 import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

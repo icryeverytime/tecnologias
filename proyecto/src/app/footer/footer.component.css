@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 20px;
-    background-color: #023E8A;
+    background-color: #ce352c;
+    
     color: white;
     padding-bottom: 20px;
     margin-top: 10px;
@@ -15,7 +16,7 @@ a{
     transition: 0.3s;
 }
 a:hover{
-    color: #f00f03;
+    color: #023E8A;
 }
 @media screen and (max-width: 1000px) {
     #flex{

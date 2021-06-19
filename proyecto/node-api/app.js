@@ -4,6 +4,22 @@ var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
 
+//Intento de chat
+var app2 = require('express')();
+var http = require('http').createServer(app2);
+//
+app2.get('/', (req, res) => res.send('hello!'));
+  http.listen(3000, () => {
+  console.log('listening on *:3000');
+});
+//
+var io = require('socket.io')(http);
+io.on('connection', (socket) =>{
+  console.log('a user connected');
+});
+//
+
+
 var smtpTrans=nodemailer.createTransport({
   service: 'smtp.gmail.com',
   port: 465,
@@ -46,6 +62,7 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Content-Security-Policy", "script-src 'self' https://apis.google.com");
     next();
   });
 
@@ -71,13 +88,15 @@ app.post('/registro', (req, res) => {
   var id;
   console.log(req.body);
   console.log(req.body.name);
+  var rand = Math.floor(Math.random() * 1000);
   let sql = 'INSERT INTO Aspirante SET ?'
   let post = {
     name: req.body.name,
     correo : req.body.correo,
     contra: req.body.contra,
     fechadenac: req.body.fecha,
-    activo: "false"
+    activo: "false",
+    hash: rand.toString()
   }
   var con = mysql.createConnection({
     host: "localhost",
@@ -95,6 +114,10 @@ app.post('/registro', (req, res) => {
         } 
       res.send(result);
       console.log(result.insertId);
+      
+  
+      link="http://localhost:5000/verify/"+rand;
+
       var rand = Math.floor(Math.random() * 1000);
       let sql2='INSERT INTO Verificacion SET?';
       console.log(id);
@@ -127,9 +150,33 @@ app.post('/registro', (req, res) => {
       });
   });
 
+  app.get('/verify/:id',function(req,res){
+
+    console.log("in");
+    console.log(req.params.id);
+    var con = mysql.createConnection({
+      host: "localhost",
+      user: "root",
+      password: "123456789",
+      database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+          console.log(err);
+        };
+          con.query('UPDATE Aspirante SET activo="true" WHERE hash=\"'+req.params.id+'\"',function(err,rows){
+          if (err) {
+            console.log(err);
+          }else{
+            console.log(rows);
+          }    
+          });
+       });
+       return res.redirect('http://localhost:4200/');
+});
+
 
   
 app.listen(5000,(req,res)=>{
     console.log('Express API esta corriendo en el puerto 5000');
 });
-
