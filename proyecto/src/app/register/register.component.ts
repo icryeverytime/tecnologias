@@ -3,12 +3,16 @@ import {HttpClient} from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NgMetro4Module } from 'ng-metro4';
+import { DialogComponent } from 'ng-metro4';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
   postData={
     name: "chris",
     email: "christianantonio12322@gmail.com",
