@@ -3,6 +3,26 @@ const app =express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 var mysql= require('mysql');
+//Intento de chat
+var app2 = require('express')();
+var http = require('http').createServer(app2);
+//
+app2.get('/', (req, res) => res.send('hello!'));
+  http.listen(3000, () => {
+  console.log('listening on *:3000');
+});
+//
+var io = require('socket.io')(http);
+io.on('connection', (socket) =>{
+  console.log('a user connected');
+});
+
+
+
+
+
+
+
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
