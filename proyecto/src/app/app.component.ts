@@ -10,6 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent implements OnInit{
   
   public data:any = [];
+
  constructor(private http: HttpClient) { 
  }
   getData(){
@@ -17,8 +18,6 @@ export class AppComponent implements OnInit{
     this.http.get(url).subscribe((res)=>{
       this.data =res;
       console.log(this.data);
-      let p;
-
     })
   }
   ngOnInit(){
