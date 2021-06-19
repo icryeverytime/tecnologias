@@ -13,6 +13,8 @@ import { NgMetro4Module } from 'ng-metro4';
 import { NgMetro4FormsModule } from 'ng-metro4';
 import { NgMetro4BaseModule } from 'ng-metro4';
 import { ContactoComponent } from './contacto/contacto.component';
+import { RegisterComponent } from './register/register.component';
+import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     FrontpageComponent,
     PrincipaleComponent,
     ContactoComponent    
+    RegisterComponent,    
+    TerminosServicioComponent    
   ],
   imports: [
     BrowserModule,
