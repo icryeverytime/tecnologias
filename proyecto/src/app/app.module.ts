@@ -23,7 +23,7 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
     FooterComponent,
     FrontpageComponent,
     PrincipaleComponent,
-    ContactoComponent    
+    ContactoComponent,    
     RegisterComponent,    
     TerminosServicioComponent    
   ],
