@@ -28,6 +28,7 @@
             ],
             "styles": [
               "node_modules/metro4/build/css/metro-all.min.css",
+              "node_modules/metro4/build/css/metro-all.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],

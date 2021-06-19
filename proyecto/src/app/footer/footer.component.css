@@ -30,3 +30,13 @@ a:hover{
         margin-bottom: 5px;
     }
   }
+
+  .ftr a{
+      color: white;
+      text-decoration: none;
+  }
+
+  .ftr a:hover{
+      color: lightskyblue;
+      text-decoration: none;
+  }
