@@ -3,6 +3,7 @@ const app =express();
 var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
+
 //Intento de chat
 var app2 = require('express')();
 var http = require('http').createServer(app2);
@@ -116,6 +117,21 @@ app.post('/registro', (req, res) => {
       
   
       link="http://localhost:5000/verify/"+rand;
+
+      var rand = Math.floor(Math.random() * 1000);
+      let sql2='INSERT INTO Verificacion SET?';
+      console.log(id);
+      let post2={
+        id_cuenta: result.insertId,
+        hash: rand.toString()
+      }
+      con.query(sql2,post2, function (err, result, fields) {
+        if (err){
+          console.log(err);
+        } 
+        console.log(result);
+      });
+      link="http://localhost:5000/verify?id="+rand;
       transporter.sendMail({
         from: 'internetcompany68@gmail.com',
         to: req.body.correo,
@@ -159,6 +175,8 @@ app.post('/registro', (req, res) => {
        return res.redirect('http://localhost:4200/');
 });
 
+
+  
 app.listen(5000,(req,res)=>{
     console.log('Express API esta corriendo en el puerto 5000');
 });
