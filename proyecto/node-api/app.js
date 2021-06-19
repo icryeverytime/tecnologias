@@ -40,8 +40,6 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-
-
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(function (req, res, next) {
@@ -129,6 +127,8 @@ app.post('/registro', (req, res) => {
       });
   });
 
+
+  
 app.listen(5000,(req,res)=>{
     console.log('Express API esta corriendo en el puerto 5000');
 });
