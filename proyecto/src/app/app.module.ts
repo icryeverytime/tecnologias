@@ -1,23 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FrontpageComponent } from './frontpage/frontpage.component';
+import { PrincipaleComponent } from './principale/principale.component';
+import { NgMetro4Module } from 'ng-metro4';
+import { NgMetro4FormsModule } from 'ng-metro4';
+import { NgMetro4BaseModule } from 'ng-metro4';
+import { ContactoComponent } from './contacto/contacto.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent    
+    FooterComponent,
+    FrontpageComponent,
+    PrincipaleComponent,
+    ContactoComponent    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgMetro4Module,
   ],
   providers: [],
   bootstrap: [AppComponent]
