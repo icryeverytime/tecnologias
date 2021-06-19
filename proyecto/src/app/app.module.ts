@@ -16,6 +16,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { RegisterComponent } from './register/register.component';
 import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
