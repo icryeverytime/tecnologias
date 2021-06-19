@@ -1,10 +1,35 @@
+
 <h1>
-    Prueba
+    Rellena el formulario
 </h1>
-<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
-    <input type="text" name="name" ngModel placeholder="name"><br><br>  
-    <input type="email" name="correo" ngModel placeholder="email"><br><br>    
-    <input type="password" name="contra" ngModel placeholder="password"><br><br>    
-    <input type="date" name="fecha" ngModel><br><br>    
-    <button type="submit">Submit</button>
+
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">    
+    <div class="form-group">
+        <label>Nombre</label>
+        <input class="w-25" type="text" name="name" ngModel placeholder="name">  
+    </div>          
+    <div class="form-group">
+        <label>Email</label>
+        <input class="w-25" type="email" name="correo" ngModel placeholder="email">
+        <small class="text-muted">No compartiremos tu correo con nadie más.</small>
+    </div>
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input class="w-25" type="password" name="contra" ngModel placeholder="password">  
+    </div>
+    <div class="form-group">
+        <label>Ingrese su fecha de nacimiento</label><br>
+        <input type="date" name="fecha" ngModel><br><br>    
+    </div>
+    <div class="form-group">
+        <div class="dialog" data-role="dialog" id="demoDialog1">
+            <div class="dialog-content">
+                Usted ha creado su cuenta!
+            </div>
+            <div class="dialog-actions">
+                <button class="button primary js-dialog-close">Ok</button>
+            </div>
+        </div>
+        <button class="button primary" type="button" onclick="Metro.dialog.open('#demoDialog1')">Submit</button>
+    </div>
 </form>
