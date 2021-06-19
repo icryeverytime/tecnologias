@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="twitter:site" content="@metroui">
+    <meta name="twitter:creator" content="@pimenov_sergey">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Metro 4 Components Library">
+    <meta name="twitter:description" content="Metro 4 is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with responsive grid system, extensive prebuilt components, and powerful plugins  .">
+    <meta name="twitter:image" content="https://metroui.org.ua/images/m4-logo-social.png">
+
+    <meta property="og:url" content="https://metroui.org.ua/index.html">
+    <meta property="og:title" content="Metro 4 Components Library">
+    <meta property="og:description" content="Metro 4 is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with responsive grid system, extensive prebuilt components, and powerful plugins  .">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://metroui.org.ua/images/m4-logo-social.png">
+    <meta property="og:image:secure_url" content="https://metroui.org.ua/images/m4-logo-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="968">
+    <meta property="og:image:height" content="504">
+
+    <meta name="author" content="Sergey Pimenov">
+    <meta name="description" content="The most popular HTML, CSS, and JS library in Metro style.">
+    <meta name="keywords" content="HTML, CSS, JS, Metro, CSS3, Javascript, HTML5, UI, Library, Web, Development, Framework">
+
+
+    <link href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css" rel="stylesheet">
+
+    <style>
+        .pagination {
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Ofertas de Trabajo</h1>
+    <h3 class="text-center">Puede filtrar sus búsquedas</h3>
+    <table class="table striped table-border mt-4" id="example" data-role="table" data-pagination="true">
+    <thead>
+    <tr>
+        <th class="sortable-column">Ver</th>
+        <th class="sortable-column sort-desc">Vacante</th>
+        <th class="sortable-column">Empresa</th>
+        <th class="sortable-column sort-asc">País</th>
+        <th class="sortable-column" data-format="date">Fecha de Inicio</th>
+        <th class="sortable-column" data-format="money">Salario</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td>Mantenimiento de Computadoras</td>
+        <td>La Huerta</td>
+        <td>México</td>
+        <td>2021/11/01</td>
+        <td>$5,000 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Programador de Java</td>
+        <td>Softek</td>
+        <td>México</td>
+        <td>2021/01/03</td>
+        <td>$7,500 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Becario de contabilidad</td>
+        <td>Despacho de Contaduria</td>
+        <td>México</td>
+        <td>2021/11/10</td>
+        <td>$6,666 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Traductor Francés-Inglés</td>
+        <td>Consulado Francés en EUA</td>
+        <td>Estados Unidos</td>
+        <td>2021/06/22</td>
+        <td>$500 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Chef</td>
+        <td>Le Pré Catelan</td>
+        <td>París</td>
+        <td>2021/04/30</td>
+        <td>$600 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Asistente de Chef</td>
+        <td>Le Taillevent</td>
+        <td>París</td>
+        <td>2021/06/24</td>
+        <td>$350 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Maestro de Español</td>
+        <td>Harvard University</td>
+        <td>Estados Unidos</td>
+        <td>2021/10/01</td>
+        <td>$400 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Asesor de Ventas</td>
+        <td>Prosmark</td>
+        <td>México</td>
+        <td>2021/04/23</td>
+        <td>$15,000 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Técnico en Electricidad</td>
+        <td>Texas Instruments</td>
+        <td>Estados Unidos</td>
+        <td>2021/06/24</td>
+        <td>$1,000 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Vendedor de Autos</td>
+        <td>Honda</td>
+        <td>Japón</td>
+        <td>2021/09/19</td>
+        <td>$86,250 YEN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Asesor de Moda</td>
+        <td>Gucci</td>
+        <td>Italia</td>
+        <td>2021/10/17</td>
+        <td>$700 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Atención al cliente</td>
+        <td>Teleperformance</td>
+        <td>México</td>
+        <td>2021/02/05</td>
+        <td>$4,000 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Diseñador Gráfico</td>
+        <td>Microsoft</td>
+        <td>España</td>
+        <td>2021/09/16</td>
+        <td>$500 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Diseñador Gráfico</td>
+        <td>Facebook</td>
+        <td>Estados Unidos</td>
+        <td>2021/05/26</td>
+        <td>$750 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Mantenimiento de Maquinaria</td>
+        <td>PEMEX</td>
+        <td>México</td>
+        <td>2021/11/08</td>
+        <td>$30,000 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Cajero</td>
+        <td>Walmart</td>
+        <td>Estados Unidos</td>
+        <td>2021/03/19</td>
+        <td>$100 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Abogado</td>
+        <td>L&S Abogados</td>
+        <td>Sudáfrica</td>
+        <td>2021/05/15</td>
+        <td>$4,500 RAND</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Doctor General</td>
+        <td>Royal London Hospital</td>
+        <td>Inglaterra</td>
+        <td>2021/10/18</td>
+        <td>$1,000 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Médico Cirujano</td>
+        <td>Toronto General Hospital</td>
+        <td>Canada</td>
+        <td>2021/03/13</td>
+        <td>$20,000 CAD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Endocrinólogo</td>
+        <td>Star medica</td>
+        <td>México</td>
+        <td>2021/08/26</td>
+        <td>$16,000 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Fisioterapeuta</td>
+        <td>Gosford Hospital</td>
+        <td>Australia</td>
+        <td>2021/08/15</td>
+        <td>$1,000 AUD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Java Developer</td>
+        <td>he[a]t PMT</td>
+        <td>Rumania</td>
+        <td>2021/07/03</td>
+        <td>$4,050 RON</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>System Development Engineer</td>
+        <td>Sensata</td>
+        <td>China</td>
+        <td>2021/08/18</td>
+        <td>$5,700 CNY</td>
+    </tr>
+    <tr>
+        <td>Savannah Barr</td>
+        <td>Proin Vel Nisl Industries</td>
+        <td>Assiniboia</td>
+        <td>65</td>
+        <td>2000/06/05</td>
+        <td>$7,560</td>
+    </tr>
+    <tr>
+        <td>Yolanda Benson</td>
+        <td>Cras Inc.</td>
+        <td>Meerle</td>
+        <td>24</td>
+        <td>2011/05/15</td>
+        <td>$5,972</td>
+    </tr>
+    <tr>
+        <td>Caesar Diaz</td>
+        <td>Ligula Aenean Euismod LLP</td>
+        <td>Gualdo Tadino</td>
+        <td>55</td>
+        <td>2000/01/03</td>
+        <td>$9,616</td>
+    </tr>
+    <tr>
+        <td>Bree Palmer</td>
+        <td>A Magna Lorem LLC</td>
+        <td>Firozabad</td>
+        <td>39</td>
+        <td>2016/07/18</td>
+        <td>$9,909</td>
+    </tr>
+    <tr>
+        <td>Stone Mccoy</td>
+        <td>At Fringilla Purus LLP</td>
+        <td>Melsele</td>
+        <td>56</td>
+        <td>2007/05/29</td>
+        <td>$7,569</td>
+    </tr>
+    <tr>
+        <td>Caesar Nieves</td>
+        <td>Interdum PC</td>
+        <td>Strombeek-Bever</td>
+        <td>18</td>
+        <td>2004/02/08</td>
+        <td>$8,931</td>
+    </tr>
+    <tr>
+        <td>Yoshi Whitfield</td>
+        <td>Mauris Sagittis PC</td>
+        <td>Santa Maria</td>
+        <td>64</td>
+        <td>2015/09/24</td>
+        <td>$7,278</td>
+    </tr>
+    <tr>
+        <td>Venus Justice</td>
+        <td>Imperdiet Associates</td>
+        <td>Pergola</td>
+        <td>30</td>
+        <td>2015/10/09</td>
+        <td>$6,300</td>
+    </tr>
+    <tr>
+        <td>Fletcher Cain</td>
+        <td>Ac Associates</td>
+        <td>Prestatyn</td>
+        <td>36</td>
+        <td>2006/03/09</td>
+        <td>$8,909</td>
+    </tr>
+    <tr>
+        <td>Harding Rocha</td>
+        <td>Nibh Vulputate Incorporated</td>
+        <td>Andacollo</td>
+        <td>19</td>
+        <td>2014/03/29</td>
+        <td>$8,204</td>
+    </tr>
+    <tr>
+        <td>Reagan English</td>
+        <td>Morbi Vehicula Pellentesque Incorporated</td>
+        <td>Comblain-la-Tour</td>
+        <td>25</td>
+        <td>2001/11/12</td>
+        <td>$9,072</td>
+    </tr>
+    <tr>
+        <td>Cassidy Waller</td>
+        <td>Lacus LLP</td>
+        <td>Tiarno di Sopra</td>
+        <td>45</td>
+        <td>2001/06/27</td>
+        <td>$6,674</td>
+    </tr>
+    <tr>
+        <td>Octavius Trujillo</td>
+        <td>In Lobortis Tellus Incorporated</td>
+        <td>Cleveland</td>
+        <td>40</td>
+        <td>2012/06/16</td>
+        <td>$5,106</td>
+    </tr>
+    <tr>
+        <td>Lewis Cunningham</td>
+        <td>Nisi Aenean Inc.</td>
+        <td>Richmond Hill</td>
+        <td>42</td>
+        <td>2009/12/22</td>
+        <td>$5,050</td>
+    </tr>
+    <tr>
+        <td>Quyn Holder</td>
+        <td>Interdum Feugiat Sed Foundation</td>
+        <td>Llandovery</td>
+        <td>61</td>
+        <td>2000/10/16</td>
+        <td>$5,878</td>
+    </tr>
+    <tr>
+        <td>Illiana Goff</td>
+        <td>Leo Vivamus Nibh Inc.</td>
+        <td>Drachten</td>
+        <td>39</td>
+        <td>2004/07/06</td>
+        <td>$6,816</td>
+    </tr>
+    <tr>
+        <td>Zenia Wright</td>
+        <td>Morbi Corporation</td>
+        <td>Haldia</td>
+        <td>19</td>
+        <td>2003/08/28</td>
+        <td>$6,267</td>
+    </tr>
+    <tr>
+        <td>Lane Collins</td>
+        <td>Facilisis Suspendisse Incorporated</td>
+        <td>Borgomasino</td>
+        <td>39</td>
+        <td>2015/10/29</td>
+        <td>$9,505</td>
+    </tr>
+    <tr>
+        <td>Tanisha Bailey</td>
+        <td>Euismod Ac Fermentum PC</td>
+        <td>Melilla</td>
+        <td>21</td>
+        <td>2008/05/16</td>
+        <td>$8,777</td>
+    </tr>
+    <tr>
+        <td>Francis Medina</td>
+        <td>Sit Amet Institute</td>
+        <td>Oostkamp</td>
+        <td>31</td>
+        <td>2000/04/19</td>
+        <td>$8,986</td>
+    </tr>
+    <tr>
+        <td>Lyle Peck</td>
+        <td>Pede Nonummy Ut Institute</td>
+        <td>Camiña</td>
+        <td>30</td>
+        <td>2009/11/14</td>
+        <td>$8,761</td>
+    </tr>
+    <tr>
+        <td>Clio Valencia</td>
+        <td>Neque Limited</td>
+        <td>Halkirk</td>
+        <td>21</td>
+        <td>2007/03/21</td>
+        <td>$6,558</td>
+    </tr>
+    <tr>
+        <td>Chloe Marquez</td>
+        <td>Nec Institute</td>
+        <td>Little Rock</td>
+        <td>22</td>
+        <td>2016/03/30</td>
+        <td>$5,998</td>
+    </tr>
+    <tr>
+        <td>Adrienne Vance</td>
+        <td>Eget Metus In Foundation</td>
+        <td>Bad Nauheim</td>
+        <td>18</td>
+        <td>2019/03/03</td>
+        <td>$9,162</td>
+    </tr>
+    <tr>
+        <td>Vance Curtis</td>
+        <td>Donec Non Foundation</td>
+        <td>Castri di Lecce</td>
+        <td>20</td>
+        <td>2001/03/17</td>
+        <td>$5,641</td>
+    </tr>
+    <tr>
+        <td>Seth Fletcher</td>
+        <td>Nunc Mauris Morbi LLP</td>
+        <td>Saint John</td>
+        <td>25</td>
+        <td>2001/03/16</td>
+        <td>$6,876</td>
+    </tr>
+    <tr>
+        <td>Russell Walters</td>
+        <td>Massa Rutrum Magna Inc.</td>
+        <td>Guarapuava</td>
+        <td>21</td>
+        <td>2006/04/10</td>
+        <td>$7,676</td>
+    </tr>
+    <tr>
+        <td>Quamar Wooten</td>
+        <td>Id PC</td>
+        <td>Alkmaar</td>
+        <td>23</td>
+        <td>2010/05/04</td>
+        <td>$5,240</td>
+    </tr>
+    <tr>
+        <td>Brianna Barrett</td>
+        <td>Integer Corp.</td>
+        <td>Llanquihue</td>
+        <td>31</td>
+        <td>2004/01/28</td>
+        <td>$8,852</td>
+    </tr>
+    <tr>
+        <td>Brenda Cherry</td>
+        <td>Eu Corporation</td>
+        <td>Armento</td>
+        <td>52</td>
+        <td>2019/02/09</td>
+        <td>$5,820</td>
+    </tr>
+    <tr>
+        <td>Rajah Herring</td>
+        <td>Nunc Sollicitudin Commodo Ltd</td>
+        <td>Metairie</td>
+        <td>28</td>
+        <td>2011/01/06</td>
+        <td>$6,518</td>
+    </tr>
+    <tr>
+        <td>Dakota Chan</td>
+        <td>Et Inc.</td>
+        <td>Strona</td>
+        <td>50</td>
+        <td>2013/08/14</td>
+        <td>$9,494</td>
+    </tr>
+    <tr>
+        <td>Norman Parks</td>
+        <td>Orci Incorporated</td>
+        <td>Pirque</td>
+        <td>49</td>
+        <td>2008/02/18</td>
+        <td>$5,895</td>
+    </tr>
+    <tr>
+        <td>Kane Lawson</td>
+        <td>Gravida Sagittis Company</td>
+        <td>Guben</td>
+        <td>23</td>
+        <td>2006/01/30</td>
+        <td>$7,537</td>
+    </tr>
+    <tr>
+        <td>Valentine Jimenez</td>
+        <td>Malesuada Fames Associates</td>
+        <td>Chandrapur</td>
+        <td>61</td>
+        <td>2014/01/21</td>
+        <td>$7,764</td>
+    </tr>
+    <tr>
+        <td>Helen Gutierrez</td>
+        <td>Mollis Inc.</td>
+        <td>Tiel</td>
+        <td>24</td>
+        <td>2005/05/18</td>
+        <td>$6,240</td>
+    </tr>
+    <tr>
+        <td>McKenzie Case</td>
+        <td>Bibendum Sed Est Consulting</td>
+        <td>Vieuxville</td>
+        <td>35</td>
+        <td>2018/03/12</td>
+        <td>$9,965</td>
+    </tr>
+    <tr>
+        <td>Hunter Bennett</td>
+        <td>Facilisis Suspendisse Corp.</td>
+        <td>Anderlues</td>
+        <td>57</td>
+        <td>2009/04/23</td>
+        <td>$6,693</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Programador de MySQL</td>
+        <td>Xiaomi</td>
+        <td>China</td>
+        <td>2021/01/16</td>
+        <td>$5,000 CNY</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Ingeniero en Sistemas</td>
+        <td>TENCENT</td>
+        <td>China</td>
+        <td>2021/01/12</td>
+        <td>$3,200 CNY</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Programador Web</td>
+        <td>Facebook</td>
+        <td>Estados Unidos</td>
+        <td>2021/11/24</td>
+        <td>$700 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Profesor de Historia</td>
+        <td>Universidad de Barcelona</td>
+        <td>España</td>
+        <td>2021/01/21</td>
+        <td>$500 EUROS</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Q.F.B</td>
+        <td>Korea Lab</td>
+        <td>Corea del Sur</td>
+        <td>2021/10/10</td>
+        <td>$1,051,796 KRW</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Chofer</td>
+        <td>UBER</td>
+        <td>Estados Unidos</td>
+        <td>2021/02/14</td>
+        <td>$250 USD</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Chofer</td>
+        <td>DiDi</td>
+        <td>México</td>
+        <td>2021/05/14</td>
+        <td>$4,300 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Chofer</td>
+        <td>Jersey</td>
+        <td>México</td>
+        <td>2021/03/04</td>
+        <td>$5,500 MXN</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Chofer</td>
+        <td>UBER</td>
+        <td>México</td>
+        <td>2021/11/15</td>
+        <td>$4,500 MXN</td>
+    </tr>
+  
+    
+    </tbody>
+    <tfoot>
+    <tr>
+        <th>Ver</th>
+        <th>Vacante</th>
+        <th>Empresa</th>
+        <th>País</th>
+        <th>Fecha de Inicio</th>
+        <th>Salario</th>
+    </tr>
+    </tfoot>
+    </table>
+</div>
+
+<script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+<!-- ads-script -->
+
+</body>
+</html>
