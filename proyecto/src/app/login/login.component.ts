@@ -5,6 +5,8 @@ import {NgForm} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { NgMetro4Module } from 'ng-metro4';
 import { DialogComponent } from 'ng-metro4';
+import { EMPTY } from 'rxjs';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+   
   }
   onSubmit(data:any){
     console.log(data);
@@ -37,6 +40,15 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("correo",json.correo);
       this.greeter = document.getElementById("name");
       this.greeter.innerText = localStorage.getItem("ID");
+      
+      }
     });
+    var currentUser = localStorage.getItem('name')!;
+    document.getElementById("mostrarnombre")!.innerHTML=currentUser;
+    if(localStorage.getItem("name")===null){
+      document.getElementById("mostrarnombre")!.innerHTML="";
+    }    
   }
+
+  
 }
