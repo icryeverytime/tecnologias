@@ -15,7 +15,10 @@
         <li><a><span class="mif-contacts-mail
             icon"></span>Contacto</a></li>
         <li class="divider"></li>
-        <li><a routerLink="/register-component"><span class="mif-users icon"></span>Mi Cuenta</a></li>
+        <li><a routerLink="/register-component"><span class="mif-keyboard icon"></span>Registrate</a></li>
+        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Usuario: <br><div id="mostrarnombre"></div></a></li>
+        <br><li><button onclick="localStorage.clear(); location.reload();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+
     </ul>
 </aside>
 <div class="shifted-content h-100 p-ab">
@@ -36,7 +39,6 @@
 </html><br><br><br><br>
 
 <router-outlet></router-outlet>
-
 
 
 <app-footer></app-footer>

@@ -1,0 +1,18 @@
+
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+    <div class="form-group">
+        <label>Email</label>
+        <input class="w-25" type="email" name="correo" ngModel placeholder="email">
+        <small class="text-muted">No compartiremos tu correo con nadie más.</small>
+    </div>
+    <div class="form-group">
+        <label>Contraseña</label>
+        <input class="w-25" type="password" name="contra" ngModel placeholder="password">  
+    </div><br>
+    <button class="button primary" type="submit">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <button class="button primary" onclick="location.reload();">Actualizar info</button>
+    
+</form>
+<div id="greeter">
+
+</div>
