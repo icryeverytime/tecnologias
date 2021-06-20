@@ -4,7 +4,7 @@ var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
 
-console.log('asaddasdsada');
+
 //Intento de chat
 var app2 = require('express')();
 //var http = require('http').createServer(app2);
@@ -59,7 +59,7 @@ let transporter = nodemailer.createTransport({
 });
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -115,6 +115,33 @@ app.post('/login', (req, res) => {
     });
 });
 });  
+app.post('/curriculum',(req,res)=>{
+  console.log(req.body);
+  var a=req.body.curri;
+  console.log(a);
+  var b=req.body.prueba;
+  console.log(b);
+  let sql='UPDATE Aspirante SET curri=? WHERE idcuenta=?';
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+        console.log(err);
+      };
+      con.query(sql,[a,b], function (err, result, fields) {
+        if (err){
+          console.log(err);
+        } 
+        console.log(result);
+      res.send(result);
+      
+    });    
+  });
+});
 app.post('/registro', (req, res) => {
   var id;
   console.log(req.body);
