@@ -1,3 +1,4 @@
+
 <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
     <div class="form-group">
         <label>Email</label>
@@ -7,8 +8,9 @@
     <div class="form-group">
         <label>Contraseña</label>
         <input class="w-25" type="password" name="contra" ngModel placeholder="password">  
-    </div>
-    <button class="button primary" type="submit">Submit</button> 
+    </div><br>
+    <button class="button primary" type="submit">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <button class="button primary" onclick="location.reload();">Actualizar info</button>
     
 </form>
 <div id="greeter">

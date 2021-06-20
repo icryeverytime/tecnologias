@@ -4,6 +4,7 @@ var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
 
+console.log('asaddasdsada');
 //Intento de chat
 var app2 = require('express')();
 //var http = require('http').createServer(app2);
@@ -18,6 +19,7 @@ io.on('connection', (socket) =>{
   console.log('a user connected');
 });*/
 //
+
 
 
 var smtpTrans=nodemailer.createTransport({
