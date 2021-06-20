@@ -4,22 +4,6 @@ var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
 
-//Intento de chat
-var app2 = require('express')();
-var http = require('http').createServer(app2);
-//
-app2.get('/', (req, res) => res.send('hello!'));
-  http.listen(3000, () => {
-  console.log('listening on *:3000');
-});
-//
-var io = require('socket.io')(http);
-io.on('connection', (socket) =>{
-  console.log('a user connected');
-});
-//
-
-
 var smtpTrans=nodemailer.createTransport({
   service: 'smtp.gmail.com',
   port: 465,

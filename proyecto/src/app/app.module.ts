@@ -26,7 +26,7 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
     PrincipaleComponent,
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent    
+    TerminosServicioComponent,   
   ],
   imports: [
     BrowserModule,
