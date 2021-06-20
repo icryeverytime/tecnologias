@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio.component';
 import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     PrincipaleComponent,
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent    
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
   ],
   imports: [
     BrowserModule,

@@ -6,17 +6,17 @@ var xoauth2 = require('xoauth2');
 
 //Intento de chat
 var app2 = require('express')();
-var http = require('http').createServer(app2);
+//var http = require('http').createServer(app2);
 //
-app2.get('/', (req, res) => res.send('hello!'));
+/*app2.get('/', (req, res) => res.send('hello!'));
   http.listen(3000, () => {
   console.log('listening on *:3000');
-});
+});*/
 //
-var io = require('socket.io')(http);
+/*var io = require('socket.io')(http);
 io.on('connection', (socket) =>{
   console.log('a user connected');
-});
+});*/
 //
 
 
@@ -83,7 +83,36 @@ app.get('/getData',(req,res)=>{
         });
       });
 });
-
+app.post('/login', (req, res) => {
+  console.log(req.body.correo);
+  console.log(req.body.contra);
+  var correo=req.body.correo;
+  var contra=req.body.contra;
+  let sql="SELECT * FROM Aspirante WHERE correo=? AND activo=? AND contra=?";
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+        console.log(err);
+      };
+    con.query(sql,[correo,"true",contra],function(err,result,fields){
+      if(err){
+        console.log(err);
+      }
+      if(result.length>0)
+      {
+        console.log(JSON.stringify(result));
+      res.send(JSON.stringify(result[0]));
+      }else{
+        console.log("nada");
+      }
+    });
+});
+});  
 app.post('/registro', (req, res) => {
   var id;
   console.log(req.body);
@@ -115,23 +144,7 @@ app.post('/registro', (req, res) => {
       res.send(result);
       console.log(result.insertId);
       
-  
       link="http://localhost:5000/verify/"+rand;
-
-      var rand = Math.floor(Math.random() * 1000);
-      let sql2='INSERT INTO Verificacion SET?';
-      console.log(id);
-      let post2={
-        id_cuenta: result.insertId,
-        hash: rand.toString()
-      }
-      con.query(sql2,post2, function (err, result, fields) {
-        if (err){
-          console.log(err);
-        } 
-        console.log(result);
-      });
-      link="http://localhost:5000/verify?id="+rand;
       transporter.sendMail({
         from: 'internetcompany68@gmail.com',
         to: req.body.correo,
@@ -151,7 +164,6 @@ app.post('/registro', (req, res) => {
   });
 
   app.get('/verify/:id',function(req,res){
-
     console.log("in");
     console.log(req.params.id);
     var con = mysql.createConnection({
