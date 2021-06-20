@@ -35,11 +35,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("ID",json.idcuenta);
       localStorage.setItem("name",json.name);
       localStorage.setItem("correo",json.correo);
-      if(localStorage.getItem("ID")){
       this.greeter = document.getElementById("name");
       this.greeter.innerText = localStorage.getItem("ID");
-      }
-
     });
   }
 }

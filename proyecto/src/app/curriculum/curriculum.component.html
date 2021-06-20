@@ -1,0 +1,8 @@
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+    <div class="form-group">
+        <label>Suba su curriculum</label>
+        <input type="hidden" name="prueba" id="prueba" [(ngModel)]="myId">
+        <textarea name="curri" data-role="textarea" ngModel></textarea>
+    </div>
+    <button class="button primary" type="submit">Submit</button> 
+</form>

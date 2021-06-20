@@ -18,8 +18,7 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
 import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
-
-
+import { CurriculumComponent } from './curriculum/curriculum.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     PrincipaleComponent,
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent    
   ],
   imports: [
     BrowserModule,
@@ -37,6 +36,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     NgMetro4Module,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
