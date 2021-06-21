@@ -48,7 +48,8 @@ import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.comp
     AppRoutingModule,
     FormsModule,
     NgMetro4Module,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
   ],

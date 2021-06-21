@@ -37,10 +37,10 @@ export class LoginempresaComponent implements OnInit {
       document.getElementById("mostrarnombre2")!.innerHTML="";
     }
     if(localStorage.getItem("ID")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=true;
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=true;
     }
     if(localStorage.getItem("IDempresa")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=false;
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=false;
     }    
   }
 }
