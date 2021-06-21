@@ -50,10 +50,9 @@ export class LoginComponent implements OnInit {
       document.getElementById("mostrarnombre")!.innerHTML="";
     }    
     if(localStorage.getItem("ID")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=true;
-    }
-    if(localStorage.getItem("IDempresa")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=false;
+      window.location.replace('https://www.google.com.mx/');
+    }else{
+      window.location.replace('https://www.youtube.com/');
     }
   }
 

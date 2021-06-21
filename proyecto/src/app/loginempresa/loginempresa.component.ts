@@ -35,5 +35,12 @@ export class LoginempresaComponent implements OnInit {
     if(localStorage.getItem("name")===null){
       document.getElementById("mostrarnombre")!.innerHTML="";
     }    
+
+if(localStorage.getItem("ID")!=null){
+      window.location.replace('https://www.google.com.mx/');
+    }else{
+      window.location.replace('https://www.youtube.com/');
+    }
+
   }
 }

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
@@ -32,13 +32,11 @@ import { RegisterempresaComponent } from './registerempresa/registerempresa.comp
     FooterComponent,
     FrontpageComponent,
     PrincipaleComponent,
-    ContactoComponent,    
-
-    RegisterComponent, 
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
-
-    RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent    
+    ContactoComponent,
+    RegisterComponent,
+    TerminosServicioComponent, 
+    PolizasComponent, AboutusComponent,
+    LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent
 
   ],
   imports: [
