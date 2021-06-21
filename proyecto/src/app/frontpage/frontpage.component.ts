@@ -23,10 +23,11 @@ export class FrontpageComponent implements OnInit {
   url='http://localhost:5000/interesado';
   onSubmit(data:any){
     console.log(data);
-    this.http.post(this.url,data,{responseType: 'text'}).subscribe((result)=>{
+    this.http.post(this.url,data,{}).subscribe((result)=>{
       console.log("result",result);
     });
   }
+  
     
   
 }

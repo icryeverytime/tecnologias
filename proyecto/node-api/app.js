@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const app =express();
 var mysql= require('mysql');
@@ -218,7 +219,7 @@ app.post('/borrar', (req, res) => {
 });
 });
 app.post('/interesado', (req, res) => {
-  console.log(req.body);
+  console.log(req.body.correo);
   var curri;
   var html2;
   let sql="SELECT * FROM Aspirante WHERE idcuenta=?";
@@ -238,6 +239,7 @@ app.post('/interesado', (req, res) => {
       }
       if(result.length>0)
       {
+        link="http://localhost:3000/"+req.body.pap;
         console.log(result);
         curri=result[0].curri;
         transporter.sendMail({
@@ -245,7 +247,7 @@ app.post('/interesado', (req, res) => {
           to: req.body.pap,
           subject: 'Intrested in your',
           text: 'I hope this message gets through!',
-          html: "Hello Company, your job posting has an interested candidate with the name of "+req.body.nombre+" his email is "+req.body.correo+" his curriculum is "+curri+".", 
+          html: "Hello Company, your job posting has an interested candidate with the name of "+req.body.nombre+" his email is "+req.body.correo+" his curriculum is "+curri+"."+link+" Link a la conferencia", 
           auth: {
             user: 'internetcompany68@gmail.com',
             refreshToken: '1//04X14B6eccQ5OCgYIARAAGAQSNwF-L9IryGl0m0UZjmsbHFtR2unvEXqp8Ngdq4o9hSPD6_rxwW9Pwa1p_DmrMY9INK0TTEvOsFw',
@@ -253,6 +255,19 @@ app.post('/interesado', (req, res) => {
             expires: 1484314697598
           }
           });
+          transporter.sendMail({
+            from: 'internetcompany68@gmail.com',
+            to: req.body.correo,
+            subject: 'Intrested in your',
+            text: 'I hope this message gets through!',
+            html: "Hello worker, your job searching has landed you a confrence with the comppany."+link+" Link a la conferencia", 
+            auth: {
+              user: 'internetcompany68@gmail.com',
+              refreshToken: '1//04X14B6eccQ5OCgYIARAAGAQSNwF-L9IryGl0m0UZjmsbHFtR2unvEXqp8Ngdq4o9hSPD6_rxwW9Pwa1p_DmrMY9INK0TTEvOsFw',
+              accessToken: 'ya29.a0AfH6SMBbUYjq2giVWd-0fPcrViqRIqdOi7R3wijzZVweobOmBS1ZLC0cPHgDs1dRgu6z-XG-f-3qlEHbhs97iXtDM6X9tWPiY3XIzrC_fPgrTVKp3Zm-qA0RnAd4z9W9bdDD91eRMOCCCKpEd1mjYzoRlLx1',
+              expires: 1484314697598
+            }
+            });
       }else{
         console.log("nada");
       }

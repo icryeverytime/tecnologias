@@ -4,11 +4,13 @@ const server = require('http').Server(app) //para crear un servidor para usar so
 const io = require('socket.io')(server) //crea un servidor basado en nuestro servidor de express
 const { v4: uuidV4 } = require('uuid') //uuid es parte de peer JS, se usa para generar un id unico apra cada sesion
 
+
 app.set('view engine', 'ejs') //como se va a renderizar nuestra vista con el motor ejs
 app.use(express.static('public')) //para especificar nuestro folder estatico llamado public
 
 app.get('/', (req, res) => { //para recibir nuestras peticiones
   res.redirect(`/${uuidV4()}`)
+  
 })
 
 app.get('/:room', (req, res) => { //pasamos un parametro variable por el url
