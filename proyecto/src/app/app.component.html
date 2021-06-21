@@ -18,16 +18,10 @@
         <li><a routerLink="/login-component"><span class="mif-users icon"></span>Usuario: <br><div id="mostrarnombre"></div></a></li><br>
         <li><a routerLink="/loginempresa-component"><span class="mif-users icon"></span>Empresa: <br><div id="mostrarnombre2"></div></a></li><br>
         <li><a routerLink="/publicarvacante-component" onclick="$templateCache.remove();"><span class="mif-users icon"></span>Publica Vacantes <br></a></li>
-        <br><li><button id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+        <br><li><button class="button primary" id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+<app-deleteforever></app-deleteforever>
 
-        
-        <li><a routerLink="/frontpage-component"><span class="mif-books icon"></span>Empleos</a></li>
-        <li><li class="divider"></li>
-        <li><a routerLink="/register-component"><span class="mif-keyboard icon"></span>Registrate</a></li>
-        <li><a routerLink="/registerempresa-component"><span class="mif-keyboard icon"></span>Eres una empresa?</a></li>
-        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Login: <div id="mostrarnombre"></div></a></li> <br>
-        <li><a routerLink="/loginempresa-component"><span class="mif-users icon"></span>Login Empresa: <br><div id="mostrarnombre2"></div></a></li> <br>
-        <br><li><button id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>  Cerrar Sesión</button></li>
+
 
     </ul>
 </aside>
@@ -50,7 +44,5 @@
 
 </html><br><br><br><br>
 <router-outlet></router-outlet>
-<app-delete></app-delete>
-<app-deleteforever></app-deleteforever>
 <app-footer></app-footer>
 
