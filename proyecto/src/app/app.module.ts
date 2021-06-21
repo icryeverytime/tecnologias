@@ -15,6 +15,16 @@ import { NgMetro4BaseModule } from 'ng-metro4';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RegisterComponent } from './register/register.component';
 import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio.component';
+import { PolizasComponent } from './polizas/polizas.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { LoginComponent } from './login/login.component';
+
+
+
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
 
 
 @NgModule({
@@ -25,8 +35,12 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
     FrontpageComponent,
     PrincipaleComponent,
     ContactoComponent,    
+
+    RegisterComponent, 
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
+
     RegisterComponent,    
-    TerminosServicioComponent,   
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent, PublicarvacanteComponent    
   ],
   imports: [
     BrowserModule,
@@ -34,8 +48,10 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
     AppRoutingModule,
     FormsModule,
     NgMetro4Module,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

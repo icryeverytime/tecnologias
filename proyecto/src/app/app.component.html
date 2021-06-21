@@ -1,10 +1,6 @@
-
 <html>
-<aside class="sidebar pos-absolute z-2"
-       data-role="sidebar"
-       data-toggle="#sidebar-toggle-3"
-       id="sb3"
-       data-shift=".shifted-content">
+<aside class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle-3" id="sb3"
+    data-shift=".shifted-content">
     <div class="sidebar-header bg-red" data-image="images/sb-bg-1.jpg">
         <div class="avatar">
             <img data-role="gravatar" data-email="a@.com" data-default="https://www.jobatus.mx/static/image/lupa.jpg">
@@ -19,7 +15,10 @@
         <li><a><span class="mif-contacts-mail
             icon"></span>Contacto</a></li>
         <li class="divider"></li>
-        <li><a routerLink="/register-component"><span class="mif-users icon"></span>Mi Cuenta</a></li>
+        <li><a routerLink="/register-component"><span class="mif-keyboard icon"></span>Registrate</a></li>
+        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Usuario: <br><div id="mostrarnombre"></div></a></li>
+        <br><li><button id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+
     </ul>
 </aside>
 <div class="shifted-content h-100 p-ab">
@@ -29,18 +28,18 @@
         </button>
     </div>
 
-   <div class="img-container" style="text-align: center;">
-    <img src="https://www.canon.com.mx/assets/img/canon-mex/cabecera-bolsa-trabajo.jpg">
-        <div class="h2">¿Qué es Midnight Professional?</div>
-        <p>
-            Somos un portal de internet el cual se dedica a brindar a nuestros visitantes, una forma fácil y rápida de buscar empleo.
-        </p>
-        <p>Brindamos las mejores ofertas de trabajo en el mundo; puedes aplicar a innumerables empresas nacionales e internacionales.</p>
-        <p>
-            ¡Así que ven y descubre tu nueva oferta de trabajo con nosotros!
-        </p>
-</div><br><br><br><br>
-<router-outlet></router-outlet>
+    <div class="img-container" style="text-align: center;">
+        <img src="https://www.canon.com.mx/assets/img/canon-mex/cabecera-bolsa-trabajo.jpg">
+
+        <div class="h2">Te ayudamos a conectar con tus clientes</div>
+        <p>Somos un portal de internet el cual se dedica a brindar a nuestros visitantes una forma fácil y rápida de buscar empleo</p>
+        <p>Brindamos las mejores ofertas de trabajo en el mundo; puedes aplicar a innumerables empresas nacionales e internacionales.        </p>
+            <p>¡Así que ven y descubre tu nueva oferta de trabajo!</p>
+    </div>
 </div>
-</html>
+
+</html><br><br><br><br>
+
+<router-outlet></router-outlet>
+<app-publicarvacante></app-publicarvacante>
 <app-footer></app-footer>
