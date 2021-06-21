@@ -19,7 +19,6 @@ import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +27,7 @@ import { LoginComponent } from './login/login.component';
     FrontpageComponent,
     PrincipaleComponent,
     ContactoComponent,    
-    RegisterComponent,    
+    RegisterComponent, 
     TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
   ],
   imports: [
@@ -38,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     NgMetro4Module,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
