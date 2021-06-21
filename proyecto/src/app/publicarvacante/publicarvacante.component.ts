@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 export class PublicarvacanteComponent implements OnInit {
 public myId=localStorage.getItem('IDEmpresa');
 public country=localStorage.getItem('paisEmpresa');
+public correo=localStorage.getItem('correoEmpresa');
   json:any;
   data:any;
   resutl:any;
