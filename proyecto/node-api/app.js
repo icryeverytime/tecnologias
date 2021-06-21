@@ -4,7 +4,7 @@ var mysql= require('mysql');
 var nodemailer=require("nodemailer");
 var xoauth2 = require('xoauth2');
 
-console.log('asaddasdsada');
+
 //Intento de chat
 var app2 = require('express')();
 //var http = require('http').createServer(app2);
@@ -59,7 +59,7 @@ let transporter = nodemailer.createTransport({
 });
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -115,6 +115,108 @@ app.post('/login', (req, res) => {
     });
 });
 });  
+app.post('/loginE', (req, res) => {
+  console.log(req.body.correo);
+  console.log(req.body.contra);
+  var correo=req.body.correo;
+  var contra=req.body.contra;
+  let sql="SELECT * FROM Empresa WHERE correo=? AND activo=? AND contra=?";
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+        console.log(err);
+      };
+    con.query(sql,[correo,"true",contra],function(err,result,fields){
+      if(err){
+        console.log(err);
+      }
+      if(result.length>0)
+      {
+        console.log(JSON.stringify(result));
+        res.send(JSON.stringify(result[0]));
+      }else{
+        console.log("nada");
+      }
+    });
+});
+});  
+app.post('/curriculum',(req,res)=>{
+  console.log(req.body);
+  var a=req.body.curri;
+  console.log(a);
+  var b=req.body.prueba;
+  console.log(b);
+  let sql='UPDATE Aspirante SET curri=? WHERE idcuenta=?';
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+        console.log(err);
+      };
+      con.query(sql,[a,b], function (err, result, fields) {
+        if (err){
+          console.log(err);
+        } 
+        console.log(result);
+      res.send(result);
+      
+    });    
+  });
+});
+app.post('/registroempresa',(req,res)=>{
+  console.log(req.body);
+  var rand = Math.floor(Math.random() * 1000);
+  let sql='INSERT INTO Empresa SET ?';
+  let post={
+    nombreempresa: req.body.name,
+    correo: req.body.correo,
+    pais: req.body.Pais,
+    contra: req.body.contra,
+    hash: rand.toString(),
+    activo: "false"
+  }
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+  });
+  con.connect(function(err) {
+    if (err){
+      console.log(err);
+    };
+    con.query(sql,post, function (err, result, fields) {
+      if (err){
+        console.log(err);
+      } 
+    res.send(result);
+    console.log(result.insertId);
+    link="http://localhost:5000/verifyE/"+rand;
+    transporter.sendMail({
+      from: 'internetcompany68@gmail.com',
+      to: req.body.correo,
+      subject: 'Please confirm your Email account',
+      text: 'I hope this message gets through!',
+      html: "Hello,<br> Please Click on the link to verify your email.<br><a href="+link+">Click here to verify</a>", 
+      auth: {
+        user: 'internetcompany68@gmail.com',
+        refreshToken: '1//04X14B6eccQ5OCgYIARAAGAQSNwF-L9IryGl0m0UZjmsbHFtR2unvEXqp8Ngdq4o9hSPD6_rxwW9Pwa1p_DmrMY9INK0TTEvOsFw',
+        accessToken: 'ya29.a0AfH6SMBbUYjq2giVWd-0fPcrViqRIqdOi7R3wijzZVweobOmBS1ZLC0cPHgDs1dRgu6z-XG-f-3qlEHbhs97iXtDM6X9tWPiY3XIzrC_fPgrTVKp3Zm-qA0RnAd4z9W9bdDD91eRMOCCCKpEd1mjYzoRlLx1',
+        expires: 1484314697598
+      }
+      });
+    });    
+  });
+});
 app.post('/registro', (req, res) => {
   var id;
   console.log(req.body);
@@ -146,7 +248,7 @@ app.post('/registro', (req, res) => {
       res.send(result);
       console.log(result.insertId);
       
-      link="http://localhost:5000/verify/"+rand;
+      link="http://localhost:5000/verifyE/"+rand;
       transporter.sendMail({
         from: 'internetcompany68@gmail.com',
         to: req.body.correo,
@@ -188,7 +290,29 @@ app.post('/registro', (req, res) => {
        });
        return res.redirect('http://localhost:4200/');
 });
-
+app.get('/verifyE/:id',function(req,res){
+  console.log("in");
+  console.log(req.params.id);
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+  });
+  con.connect(function(err) {
+    if (err){
+        console.log(err);
+      };
+        con.query('UPDATE Empresa SET activo="true" WHERE hash=\"'+req.params.id+'\"',function(err,rows){
+        if (err) {
+          console.log(err);
+        }else{
+          console.log(rows);
+        }    
+        });
+     });
+     return res.redirect('http://localhost:4200/');
+});
 
   
 app.listen(5000,(req,res)=>{

@@ -19,6 +19,12 @@ import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
 
+
+
+import { CurriculumComponent } from './curriculum/curriculum.component';
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +33,13 @@ import { LoginComponent } from './login/login.component';
     FrontpageComponent,
     PrincipaleComponent,
     ContactoComponent,    
+
     RegisterComponent, 
     TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
+
+    RegisterComponent,    
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent    
+
   ],
   imports: [
     BrowserModule,
@@ -36,6 +47,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     NgMetro4Module,
+    FormsModule
   ],
   providers: [
   ],
