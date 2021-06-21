@@ -145,6 +145,34 @@ app.post('/loginE', (req, res) => {
     });
 });
 });  
+app.post('/vacante',(req,res)=>{
+  console.log(req.body);
+  let sql='INSERT INTO Vacante SET ?';
+  let post={
+    id_empresa: req.body.prueba,
+    fechadeinicio: req.body.fecha,
+    nombrevacante: req.body.name,
+    salario: req.body.salario,
+    pais: req.body.pais
+  }
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+  });
+  con.connect(function(err) {
+    if (err){
+      console.log(err);
+    };
+    con.query(sql,post, function (err, result, fields) {
+      if (err){
+        console.log(err);
+      }
+      console.log(result); 
+    });
+  });
+});
 app.post('/curriculum',(req,res)=>{
   console.log(req.body);
   var a=req.body.curri;

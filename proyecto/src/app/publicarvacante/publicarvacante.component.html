@@ -1,0 +1,21 @@
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+    <div class="form-group">
+        <label>Suba vacante</label>
+        <input type="hidden" name="prueba" id="prueba" [(ngModel)]="myId">
+        <input type="hidden" name="pais" id="pais" [(ngModel)]="country">
+        
+    </div>
+    <div class="form-group">
+        <label>Nombre de trabajo</label>
+        <input class="w-25" type="text" name="name" ngModel placeholder="name">  
+    </div>   
+    <div class="form-group">
+        <label>Fecha de incio</label>
+        <input class="w-25" type="date" name="fecha" ngModel>  
+    </div>   
+    <div class="form-group">
+        <label>Salario</label>
+        <input class="w-25" type="text" name="salario" ngModel placeholder="Salario">  
+    </div>  
+    <button class="button primary" type="submit">Submit</button> 
+</form>

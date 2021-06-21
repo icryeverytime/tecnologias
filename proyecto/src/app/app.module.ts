@@ -24,6 +24,8 @@ import { LoginComponent } from './login/login.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
 import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
+
 
 @NgModule({
   declarations: [
@@ -38,8 +40,7 @@ import { RegisterempresaComponent } from './registerempresa/registerempresa.comp
     TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent    
 
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent    
-
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent, PublicarvacanteComponent    
   ],
   imports: [
     BrowserModule,
