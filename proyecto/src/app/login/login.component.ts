@@ -6,13 +6,18 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { NgMetro4Module } from 'ng-metro4';
 import { DialogComponent } from 'ng-metro4';
 import { EMPTY } from 'rxjs';
-
+import { FormControl,FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  constructor(private http:HttpClient
+              
+    ) { }
 
   postData={
     correo: "christianantonio12322@gmail.com",
@@ -22,7 +27,6 @@ export class LoginComponent implements OnInit {
   json:any;
   data:any;
   greeter:any;
-  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
    
@@ -46,6 +50,16 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem("name")===null){
       document.getElementById("mostrarnombre")!.innerHTML="";
     }    
+
+    if(localStorage.getItem("ID")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=true;
+    }
+    if(localStorage.getItem("IDempresa")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=false;
+    }
+
+    
+
   }
 
   

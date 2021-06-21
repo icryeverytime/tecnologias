@@ -31,10 +31,21 @@ export class LoginempresaComponent implements OnInit {
       localStorage.setItem("paisEmpresa",json.pais);
     
     });
-    var currentUser = localStorage.getItem('name')!;
-    document.getElementById("mostrarnombre")!.innerHTML=currentUser;
-    if(localStorage.getItem("name")===null){
-      document.getElementById("mostrarnombre")!.innerHTML="";
+    var currentUser = localStorage.getItem('nameEmpresa')!;
+    document.getElementById("mostrarnombre2")!.innerHTML=currentUser;
+    if(localStorage.getItem("nameEmpresa")===null){
+      document.getElementById("mostrarnombre2")!.innerHTML="";
+
+    }
+    if(localStorage.getItem("ID")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=true;
+    }
+    if(localStorage.getItem("IDempresa")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=false;
+
     }    
+
+
+
   }
 }

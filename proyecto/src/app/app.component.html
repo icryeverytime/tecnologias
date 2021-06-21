@@ -10,14 +10,25 @@
 
     </div>
     <ul class="sidebar-menu">
-        <li><a routerLink="#"><span class="mif-home icon"></span>Home</a></li>
+
         <li><a routerLink="/frontpage-component"><span class="mif-books icon"></span>Empleos</a></li>
-        <li><a><span class="mif-contacts-mail
-            icon"></span>Contacto</a></li>
         <li class="divider"></li>
         <li><a routerLink="/register-component"><span class="mif-keyboard icon"></span>Registrate</a></li>
-        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Usuario: <br><div id="mostrarnombre"></div></a></li>
-        <br><li><button onclick="localStorage.clear(); location.reload();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+        <li><a routerLink="/registerempresa-component"><span class="mif-keyboard icon"></span>Reg Empresa</a></li>
+        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Usuario: <br><div id="mostrarnombre"></div></a></li><br>
+        <li><a routerLink="/loginempresa-component"><span class="mif-users icon"></span>Empresa: <br><div id="mostrarnombre2"></div></a></li><br>
+        <li><a routerLink="/publicarvacante-component" onclick="$templateCache.remove();"><span class="mif-users icon"></span>Publica Vacantes <br></a></li>
+        <br><li><button id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>Cerrar Sesión</button></li>
+
+        
+        <li><a routerLink="/frontpage-component"><span class="mif-books icon"></span>Empleos</a></li>
+        <li><li class="divider"></li>
+        <li><a routerLink="/register-component"><span class="mif-keyboard icon"></span>Registrate</a></li>
+        <li><a routerLink="/registerempresa-component"><span class="mif-keyboard icon"></span>Eres una empresa?</a></li>
+        <li><a routerLink="/login-component"><span class="mif-users icon"></span>Login: <div id="mostrarnombre"></div></a></li> <br>
+        <li><a routerLink="/loginempresa-component"><span class="mif-users icon"></span>Login Empresa: <br><div id="mostrarnombre2"></div></a></li> <br>
+        <br><li><button id="" onclick="localStorage.clear(); $templateCache.remove();"><span class="mif-switch icon"></span>  Cerrar Sesión</button></li>
+
 
     </ul>
 </aside>
@@ -32,13 +43,13 @@
         <img src="https://www.canon.com.mx/assets/img/canon-mex/cabecera-bolsa-trabajo.jpg">
 
         <div class="h2">Te ayudamos a conectar con tus clientes</div>
-
+        <p>Somos un portal de internet el cual se dedica a brindar a nuestros visitantes una forma fácil y rápida de buscar empleo</p>
+        <p>Brindamos las mejores ofertas de trabajo en el mundo; puedes aplicar a innumerables empresas nacionales e internacionales.        </p>
+            <p>¡Así que ven y descubre tu nueva oferta de trabajo!</p>
     </div>
 </div>
 
 </html><br><br><br><br>
 
 <router-outlet></router-outlet>
-<app-loginempresa></app-loginempresa>
-<app-publicarvacante></app-publicarvacante>
 <app-footer></app-footer>

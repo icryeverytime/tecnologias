@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FrontpageComponent } from './frontpage/frontpage.component';
@@ -22,6 +22,8 @@ import { CurriculumComponent } from './curriculum/curriculum.component';
 import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
 import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +31,25 @@ import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.comp
     FooterComponent,
     FrontpageComponent,
     PrincipaleComponent,
+
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent, PublicarvacanteComponent    
+    TerminosServicioComponent, 
+    PolizasComponent, 
+    AboutusComponent, 
+    LoginComponent, 
+    CurriculumComponent, 
+    LoginempresaComponent, 
+    RegisterempresaComponent, 
+    PublicarvacanteComponent    
+
+    ContactoComponent,
+    RegisterComponent,
+    TerminosServicioComponent, 
+    PolizasComponent, AboutusComponent,
+    LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -39,9 +57,11 @@ import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.comp
     AppRoutingModule,
     FormsModule,
     NgMetro4Module,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
