@@ -11,7 +11,8 @@ export class AppComponent implements OnInit{
   
   public data:any = [];
 
- constructor(private http: HttpClient) { 
+ constructor(private http: HttpClient) {
+ 
  }
   getData(){
     const url='http://localhost:5000/getData';
