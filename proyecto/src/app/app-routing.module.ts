@@ -7,6 +7,10 @@ import { PrincipaleComponent } from './principale/principale.component';
 import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { AppComponent } from './app.component';
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
+
 
 const routes: Routes = [
   { path: 'principale-component', component: PrincipaleComponent },
@@ -15,7 +19,10 @@ const routes: Routes = [
   { path: 'polizas-component', component: PolizasComponent},
   { path: 'aboutus-component', component: AboutusComponent},
    { path: 'register-component', component: RegisterComponent},
-   { path: 'login-component', component: LoginComponent}
+   { path: 'login-component', component: LoginComponent},
+   { path: 'registerempresa-component', component: RegisterempresaComponent},
+   { path: 'loginempresa-component', component: LoginempresaComponent},
+   { path: 'app-component', component: AppComponent}
   ];
  
 @NgModule({

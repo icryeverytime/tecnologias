@@ -30,10 +30,13 @@ export class LoginempresaComponent implements OnInit {
       localStorage.setItem("correoEmpresa",json.correo);
     
     });
-    var currentUser = localStorage.getItem('name')!;
-    document.getElementById("mostrarnombre")!.innerHTML=currentUser;
-    if(localStorage.getItem("name")===null){
-      document.getElementById("mostrarnombre")!.innerHTML="";
+    var currentUser = localStorage.getItem('nameEmpresa')!;
+    document.getElementById("mostrarnombre2")!.innerHTML=currentUser;
+    if(localStorage.getItem("nameEmpresa")===null){
+      document.getElementById("mostrarnombre2")!.innerHTML="";
     }    
+
+
+
   }
 }
