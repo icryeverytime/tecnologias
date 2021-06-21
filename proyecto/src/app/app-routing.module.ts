@@ -8,7 +8,8 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
-
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
 const routes: Routes = [
   { path: 'principale-component', component: PrincipaleComponent },
   { path: 'frontpage-component', component: FrontpageComponent},
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'aboutus-component', component: AboutusComponent},
    { path: 'register-component', component: RegisterComponent},
    { path: 'login-component', component: LoginComponent},
+   { path: 'loginempresa-component', component: LoginempresaComponent},
+   { path: 'registerempresa-component', component: RegisterempresaComponent}
   ];
  
 @NgModule({

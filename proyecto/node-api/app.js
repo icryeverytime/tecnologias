@@ -277,7 +277,7 @@ app.post('/registro', (req, res) => {
       res.send(result);
       console.log(result.insertId);
       
-      link="http://localhost:5000/verifyE/"+rand;
+      link="http://localhost:5000/verify/"+rand;
       transporter.sendMail({
         from: 'internetcompany68@gmail.com',
         to: req.body.correo,
