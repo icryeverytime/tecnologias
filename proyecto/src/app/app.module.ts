@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
 import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,7 @@ import { RegisterempresaComponent } from './registerempresa/registerempresa.comp
     PrincipaleComponent,
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent    
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent, PublicarvacanteComponent    
   ],
   imports: [
     BrowserModule,

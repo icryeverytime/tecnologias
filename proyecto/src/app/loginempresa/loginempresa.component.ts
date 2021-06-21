@@ -28,6 +28,7 @@ export class LoginempresaComponent implements OnInit {
       localStorage.setItem("IDEmpresa",json.idempresa);
       localStorage.setItem("nameEmpresa",json.nombreempresa);
       localStorage.setItem("correoEmpresa",json.correo);
+      localStorage.setItem("paisEmpresa",json.pais);
     
     });
     var currentUser = localStorage.getItem('name')!;
