@@ -19,6 +19,8 @@ import { PolizasComponent } from './polizas/polizas.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { LoginComponent } from './login/login.component';
 import { CurriculumComponent } from './curriculum/curriculum.component';
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { CurriculumComponent } from './curriculum/curriculum.component';
     PrincipaleComponent,
     ContactoComponent,    
     RegisterComponent,    
-    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent    
+    TerminosServicioComponent, PolizasComponent, AboutusComponent, LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent    
   ],
   imports: [
     BrowserModule,
