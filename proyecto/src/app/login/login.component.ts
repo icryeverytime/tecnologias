@@ -49,12 +49,7 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem("name")===null){
       document.getElementById("mostrarnombre")!.innerHTML="";
     }    
-    if(localStorage.getItem("ID")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=true;
-    }
-    if(localStorage.getItem("IDempresa")!=null){
-      (<HTMLInputElement> document.getElementById("BOTONPARABLOQUEAR")).disabled=false;
-    }
+    
   }
 
   
