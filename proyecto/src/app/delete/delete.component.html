@@ -1,0 +1,34 @@
+<h1 class="text-center">Trabajadores</h1>
+    <div class="table-wrapper">    
+        <table class="f1-table">
+            <thead>
+                <tr>
+                    <th class="sortable-column">Id Vacante</th>
+                    <th class="sortable-column sort-desc">Nombre</th>
+                    <th class="sortable-column">Salario</th>
+                    <th class="sortable-column sort-asc">Fecha de Inicio</th>
+                    <th class="sortable-column" data-format="money">Pais</th>
+                    <th>Correo</th>
+                    <th>Borrar</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let datos of data" style="text-align:center">
+                        <td>{{datos.idvacante}}</td>
+                        <td>{{datos.nombrevacante}}</td>
+                        <td>{{datos.salario}}</td>
+                        <td>{{datos.fechadeinicio}}</td>
+                        <td>{{datos.pais}}</td>
+                        <td>{{datos.correo}}</td>
+                        <td>
+                        <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+                            <div class="form-group">
+                                <input type="hidden" name="prueba" id="prueba" [(ngModel)]="datos.idvacante">
+                            </div>
+                        <button class="button primary" type="submit">Borrar</button>
+                        </form>
+                        </td>  
+                    </tr> 
+                </tbody>       
+    </table>
+    </div>

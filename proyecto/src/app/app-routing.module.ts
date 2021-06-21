@@ -14,8 +14,6 @@ import { RegisterempresaComponent } from './registerempresa/registerempresa.comp
 import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
 
 
-import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
-import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 
 
 
@@ -30,7 +28,7 @@ const routes: Routes = [
 
    { path: 'loginempresa-component', component: LoginempresaComponent},
    { path: 'registerempresa-component', component: RegisterempresaComponent},
-   { path: 'publicarvacante-component', component: PublicarvacanteComponent}
+   { path: 'publicarvacante-component', component: PublicarvacanteComponent},
 
    { path: 'registerempresa-component', component: RegisterempresaComponent},
    { path: 'loginempresa-component', component: LoginempresaComponent},

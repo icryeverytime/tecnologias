@@ -22,6 +22,9 @@ import { CurriculumComponent } from './curriculum/curriculum.component';
 import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
 import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
+import { BuscarComponent } from './buscar/buscar.component';
+import { DeleteComponent } from './delete/delete.component';
+import { DeleteforeverComponent } from './deleteforever/deleteforever.component';
 
 
 @NgModule({
@@ -41,13 +44,13 @@ import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.comp
     CurriculumComponent, 
     LoginempresaComponent, 
     RegisterempresaComponent, 
-    PublicarvacanteComponent    
+    PublicarvacanteComponent,   
 
     ContactoComponent,
     RegisterComponent,
     TerminosServicioComponent, 
     PolizasComponent, AboutusComponent,
-    LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent
+    LoginComponent, CurriculumComponent, LoginempresaComponent, RegisterempresaComponent, BuscarComponent, DeleteComponent, DeleteforeverComponent
 
 
   ],
