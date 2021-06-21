@@ -8,9 +8,14 @@ import { TerminosServicioComponent } from './terminos-servicio/terminos-servicio
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
+
 import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
 import { PublicarvacanteComponent } from './publicarvacante/publicarvacante.component';
+
+
+import { RegisterempresaComponent } from './registerempresa/registerempresa.component';
+import { LoginempresaComponent } from './loginempresa/loginempresa.component';
 
 
 
@@ -22,9 +27,15 @@ const routes: Routes = [
   { path: 'aboutus-component', component: AboutusComponent},
    { path: 'register-component', component: RegisterComponent},
    { path: 'login-component', component: LoginComponent},
+
    { path: 'loginempresa-component', component: LoginempresaComponent},
    { path: 'registerempresa-component', component: RegisterempresaComponent},
    { path: 'publicarvacante-component', component: PublicarvacanteComponent}
+
+   { path: 'registerempresa-component', component: RegisterempresaComponent},
+   { path: 'loginempresa-component', component: LoginempresaComponent},
+   { path: 'app-component', component: AppComponent}
+
   ];
  
 @NgModule({

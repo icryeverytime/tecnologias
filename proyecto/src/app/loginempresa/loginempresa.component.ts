@@ -35,12 +35,17 @@ export class LoginempresaComponent implements OnInit {
     document.getElementById("mostrarnombre2")!.innerHTML=currentUser;
     if(localStorage.getItem("nameEmpresa")===null){
       document.getElementById("mostrarnombre2")!.innerHTML="";
+
     }
     if(localStorage.getItem("ID")!=null){
       (<HTMLInputElement> document.getElementById("botoncito")).disabled=true;
     }
     if(localStorage.getItem("IDempresa")!=null){
       (<HTMLInputElement> document.getElementById("botoncito")).disabled=false;
+
     }    
+
+
+
   }
 }
