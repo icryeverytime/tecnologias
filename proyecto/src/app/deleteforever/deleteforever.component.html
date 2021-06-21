@@ -1,0 +1,7 @@
+<form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+    <div class="form-group">
+        <input type="hidden" name="prueba" id="prueba" [(ngModel)]="myid">
+        <input type="hidden" name="prueba2" id="prueba2" [(ngModel)]="myid2">
+    </div>
+<button class="button primary" type="submit">Borrar Cuenta</button>
+</form>

@@ -1,0 +1,35 @@
+<h1 class="text-center">Trabajadores</h1>
+    <div class="table-wrapper">    
+        <table class="f1-table">
+            <thead>
+                <tr>
+                    <th class="sortable-column">Id Cuenta</th>
+                    <th class="sortable-column sort-desc">Nombre</th>
+                    <th class="sortable-column">Correo</th>
+                    <th class="sortable-column sort-asc">Fecha de nacimiento</th>
+                    <th class="sortable-column" data-format="money">Curriculum</th>
+                    <th>Interesado</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let datos of data" style="text-align:center">
+                        <td>{{datos.idcuenta}}</td>
+                        <td>{{datos.name}}</td>
+                        <td>{{datos.correo}}</td>
+                        <td>{{datos.fechadenac}}</td>
+                        <td>{{datos.curri}}</td>
+                        <td>
+                        <form #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">              
+                            <div class="form-group">
+                                <input type="hidden" name="prueba" id="prueba" [(ngModel)]="myId">
+                                <input type="hidden" name="tat" id="tat"  [(ngModel)]="datos.correo">
+                                <input type="hidden" name="correo" id="correo"  [(ngModel)]="correo">
+                                <input type="hidden" name="nombre" id="nombre"  [(ngModel)]="nombre">
+                            </div>
+                        <button class="button primary" type="submit">Interesado</button>
+                        </form>
+                        </td>  
+                    </tr> 
+                </tbody>       
+    </table>
+    </div>

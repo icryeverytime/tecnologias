@@ -86,6 +86,39 @@ app.get('/getData',(req,res)=>{
         });
       });
 });
+app.get('/getvacante/:id',(req,res)=>{
+  console.log(req.params.id);
+  var con = mysql.createConnection({
+      host: "localhost",
+      user: "root",
+      password: "123456789",
+      database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err) throw err;
+      con.query("SELECT * FROM Vacante WHERE id_empresa=?",req.params.id, function (err, result, fields) {
+        if (err) throw err;
+        res.send(result);
+        console.log(result);
+      });
+    });
+});
+app.get('/getaspirante',(req,res)=>{
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+  });
+  con.connect(function(err) {
+    if (err) throw err;
+    con.query("SELECT * FROM Aspirante", function (err, result, fields) {
+      if (err) throw err;
+      res.send(result);
+      console.log(result);
+    });
+  });
+});
 app.get('/getvacante',(req,res)=>{
   
   var con = mysql.createConnection({
@@ -102,6 +135,87 @@ app.get('/getvacante',(req,res)=>{
         console.log(result);
       });
     });
+});
+app.post('/interesadoE', (req, res) => {
+  console.log(req.body);
+    transporter.sendMail({
+          from: 'internetcompany68@gmail.com',
+          to: req.body.tat,
+          subject: 'Intrested in you',
+          text: 'I hope this message gets through!',
+          html: "Hello worker, your curriculum posting has an interested candidate with the name of "+req.body.nombre+" the company email is "+req.body.correo+".", 
+          auth: {
+            user: 'internetcompany68@gmail.com',
+            refreshToken: '1//04X14B6eccQ5OCgYIARAAGAQSNwF-L9IryGl0m0UZjmsbHFtR2unvEXqp8Ngdq4o9hSPD6_rxwW9Pwa1p_DmrMY9INK0TTEvOsFw',
+            accessToken: 'ya29.a0AfH6SMBbUYjq2giVWd-0fPcrViqRIqdOi7R3wijzZVweobOmBS1ZLC0cPHgDs1dRgu6z-XG-f-3qlEHbhs97iXtDM6X9tWPiY3XIzrC_fPgrTVKp3Zm-qA0RnAd4z9W9bdDD91eRMOCCCKpEd1mjYzoRlLx1',
+            expires: 1484314697598
+          }
+          });
+});
+app.post('/borrarsiempre',(req,res)=>{
+  console.log(req.body);
+  let sql="DELETE FROM Aspirante WHERE idcuenta=?";
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+  con.connect(function(err) {
+    if (err){
+      console.log(err);
+    };
+    con.query(sql,[req.body.prueba2],function(err,result){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log(result);
+    }
+    });
+    sql="DELETE FROM Empresa WHERE idempresa=?"
+    con.query(sql,[req.body.prueba],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      }
+  });
+  sql="DELETE FROM Vacante WHERE id_empresa=?"
+    con.query(sql,[req.body.prueba],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      }
+  });
+
+});
+app.post('/borrar', (req, res) => {
+  console.log(req.body);
+  let sql="DELETE FROM Vacante WHERE idvacante=?";
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "proyecto"
+    });
+    con.connect(function(err) {
+      if (err){
+        console.log(err);
+      };
+    con.query(sql,[req.body.prueba],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        res.send(result);
+      }
+    });
+  });
+});
 });
 app.post('/interesado', (req, res) => {
   console.log(req.body);
