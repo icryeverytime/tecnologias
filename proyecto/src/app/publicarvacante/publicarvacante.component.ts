@@ -20,11 +20,19 @@ public country=localStorage.getItem('paisEmpresa');
   constructor(private http:HttpClient) { }
   url='//localhost:5000/vacante';
   ngOnInit(): void {
+    if(localStorage.getItem("ID")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=true;      
+    }
+    if(localStorage.getItem("IDempresa")!=null){
+      (<HTMLInputElement> document.getElementById("botoncito")).disabled=false;
+    } 
   }
   onSubmit(data:any){
     console.log(data);
     this.http.post(this.url,data,{responseType: 'text'}).subscribe((result)=>{
       console.log("result",result);
     });
+        
   }
+  
 }
